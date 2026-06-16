@@ -1,79 +1,112 @@
-# Movieist - Full Stack Movie Review Application
+# Movieist Backend API
 
-A full-stack movie review application built using React, Spring Boot, and MongoDB. This project allows users to browse movies, watch trailers, and submit reviews.
+A backend REST API for a Movie Review Application built with Java, Spring Boot, and MongoDB. The application provides endpoints for retrieving movie information and managing user reviews.
 
 ## Features
 
-* View a list of movies
-* Watch movie trailers
-* Read and post reviews
-* RESTful API with Spring Boot
+* Retrieve all movies
+* Get movie details by IMDb ID
+* Create and store movie reviews
 * MongoDB database integration
-* Responsive React frontend
+* RESTful API architecture
+* Clean layered backend structure
 
 ## Tech Stack
 
-### Frontend
-
-* React.js
-* Axios
-* Bootstrap
-
-### Backend
-
-* Java
+* Java 17
 * Spring Boot
 * Spring Data MongoDB
-
-### Database
-
 * MongoDB Atlas
-
-## Getting Started
-
-### Prerequisites
-
-* Java 17+
-* Node.js
-* MongoDB Atlas Account
 * Maven
+* REST API
 
-### Backend Setup
+## Database
 
-```bash
-git clone <repository-url>
-cd movies
-mvn spring-boot:run
-```
+MongoDB is used as the primary database for storing:
 
-### Frontend Setup
+* Movie information
+* Movie reviews
+* IMDb identifiers
+* Trailer links and poster information
 
-```bash
-cd frontend
-npm install
-npm start
+## Project Structure
+
+```text
+src/
+├── controller/
+├── service/
+├── repository/
+├── model/
+├── config/
+└── resources/
 ```
 
 ## API Endpoints
 
-* GET /api/v1/movies
-* GET /api/v1/movies/{imdbId}
-* POST /api/v1/reviews
+### Get All Movies
 
-## Learning Objectives
+```http
+GET /api/v1/movies
+```
 
-This project helped me learn:
+### Get Movie By IMDb ID
 
-* Spring Boot REST APIs
-* MongoDB Integration
-* React Frontend Development
-* Full Stack Application Architecture
-* Git & GitHub Workflow
-* Deployment Concepts
+```http
+GET /api/v1/movies/{imdbId}
+```
 
-## Acknowledgements
+### Add Review
 
-This project is based on the Movieist tutorial project by Farhan Hasin Chowdhury and has been customized for learning and portfolio purposes.
+```http
+POST /api/v1/reviews
+```
+
+## Installation & Setup
+
+### Clone Repository
+
+```bash
+git clone https://github.com/Shishir25/movies.git
+cd movies
+```
+
+### Configure MongoDB
+
+Add your MongoDB Atlas connection string in:
+
+```properties
+spring.data.mongodb.uri=YOUR_MONGODB_CONNECTION_STRING
+```
+
+### Run Application
+
+```bash
+mvn spring-boot:run
+```
+
+The API will be available at:
+
+```text
+http://localhost:8080
+```
+
+## Skills Demonstrated
+
+* Java Backend Development
+* Spring Boot Framework
+* MongoDB Database Integration
+* REST API Development
+* CRUD Operations
+* Maven Project Management
+* Git & GitHub Version Control
+
+## Future Improvements
+
+* User Authentication with JWT
+* Role-Based Authorization
+* API Documentation using Swagger
+* Docker Deployment
+* Unit and Integration Testing
 
 ## Author
 
